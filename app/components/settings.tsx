@@ -495,9 +495,8 @@ function SyncItems() {
           title={Locale.Settings.Sync.CloudState}
           subTitle={
             syncStore.lastProvider
-              ? `${new Date(syncStore.lastSyncTime).toLocaleString()} [${
-                  syncStore.lastProvider
-                }]`
+              ? `${new Date(syncStore.lastSyncTime).toLocaleString()} [${syncStore.lastProvider
+              }]`
               : Locale.Settings.Sync.NotSyncYet
           }
         >
@@ -698,8 +697,8 @@ export function Settings() {
               checkingUpdate
                 ? Locale.Settings.Update.IsChecking
                 : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
+                  ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
+                  : Locale.Settings.Update.IsLatest
             }
           >
             {checkingUpdate ? (
@@ -832,8 +831,8 @@ export function Settings() {
               onChange={(e) =>
                 updateConfig(
                   (config) =>
-                    (config.dontShowMaskSplashScreen =
-                      !e.currentTarget.checked),
+                  (config.dontShowMaskSplashScreen =
+                    !e.currentTarget.checked),
                 )
               }
             ></input>
@@ -935,8 +934,8 @@ export function Settings() {
                       onChange={(e) => {
                         accessStore.update(
                           (access) =>
-                            (access.provider = e.target
-                              .value as ServiceProvider),
+                          (access.provider = e.target
+                            .value as ServiceProvider),
                         );
                       }}
                     >
@@ -956,17 +955,17 @@ export function Settings() {
                           Locale.Settings.Access.OpenAI.Endpoint.SubTitle
                         }
                       >
-                        <input
-                          type="text"
+                        <select
                           value={accessStore.openaiUrl}
-                          placeholder={OPENAI_BASE_URL}
                           onChange={(e) =>
-                            accessStore.update(
-                              (access) =>
-                                (access.openaiUrl = e.currentTarget.value),
-                            )
+                            accessStore.update((access) => (access.openaiUrl = e.currentTarget.value))
                           }
-                        ></input>
+                        >
+                          <option value="https://api.onechat.fun">次数api</option>
+                          <option value="https://chatapi.onechat.store">额度api</option>
+                          <option value="/api/openai/">官方api</option>
+                          <option value="https://zen-ai.top/">额度32kapi(备用)</option>
+                        </select>
                       </ListItem>
                       <ListItem
                         title={Locale.Settings.Access.OpenAI.ApiKey.Title}
@@ -1039,8 +1038,8 @@ export function Settings() {
                           onChange={(e) =>
                             accessStore.update(
                               (access) =>
-                                (access.azureApiVersion =
-                                  e.currentTarget.value),
+                              (access.azureApiVersion =
+                                e.currentTarget.value),
                             )
                           }
                         ></input>
@@ -1060,9 +1059,9 @@ export function Settings() {
                   ? loadingUsage
                     ? Locale.Settings.Usage.IsChecking
                     : Locale.Settings.Usage.SubTitle(
-                        usage?.used ?? "[?]",
-                        usage?.subscription ?? "[?]",
-                      )
+                      usage?.used ?? "[?]",
+                      usage?.subscription ?? "[?]",
+                    )
                   : Locale.Settings.Usage.NoAccess
               }
             >
