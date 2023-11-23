@@ -158,7 +158,7 @@ export function SideBar(props: { className?: string }) {
           白嫖君-ChatGPT Next
         </div>
         <div className={styles["sidebar-sub-title"]}>
-        <a href="https://cs.bjp666.link/">点击此链接购买gpt4对话额度</a>
+        <a href="http://cs.bjp666.link/">点击此链接购买gpt4对话额度</a>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
