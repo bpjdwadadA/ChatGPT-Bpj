@@ -962,7 +962,7 @@ export function Settings() {
                           }
                         >
                           <option value="https://api.onechat.fun">次数api</option>
-                          <option value="https://chatapi.onechat.store">额度api</option>
+                          <option value="https://chatapi.onechat.fun">额度api</option>
                           <option value="/api/openai/">官方api</option>
                           <option value="https://zen-ai.top/">额度32kapi(备用)</option>
                         </select>
