@@ -965,6 +965,7 @@ export function Settings() {
                           <option value="https://chatapi.onechat.fun">额度api</option>
                           <option value="/api/openai/">官方api</option>
                           <option value="https://zen-ai.top">额度32kapi(备用)</option>
+                          <option value="https://ngedlktfticp.cloud.sealos.io">应急api</option>
                         </select>
                       </ListItem>
                       <ListItem
